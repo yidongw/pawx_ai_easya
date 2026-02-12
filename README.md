@@ -1,8 +1,8 @@
-# Foxhole
+# PAWX.AI
 
 ## The Crypto Twitter Intelligence Platform
 
-Foxhole helps traders avoid scams, instantly grasp meme coin narratives, and discover the next 1000x gem before it trends.
+PAWX.AI helps traders avoid scams, instantly grasp meme coin narratives, and discover the next 1000x gem before it trends.
 
 ### Requirements
 
