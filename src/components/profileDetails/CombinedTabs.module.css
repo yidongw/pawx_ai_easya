@@ -1,0 +1,68 @@
+.scrollbox {
+  position: relative;
+  z-index: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background: no-repeat;
+  background-image:
+    radial-gradient(farthest-side at 0 50%, rgba(75, 85, 99, 0.4), rgba(75, 85, 99, 0)),
+    radial-gradient(farthest-side at 100% 50%, rgba(75, 85, 99, 0.4), rgba(75, 85, 99, 0));
+  background-position:
+    0 0,
+    100% 0;
+  background-size: 1.5rem 100%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* The content div */
+.scrollbox > * {
+  margin-left: -2rem; /* Pull content over the ::before element */
+  margin-right: -2rem;
+}
+
+.scrollbox::before,
+.scrollbox::after {
+  content: '';
+  position: relative;
+  z-index: -1;
+  display: block;
+  min-width: 2rem;
+  margin: 0;
+  flex: 1 0 auto;
+  border-radius: inherit; /* Inherit border radius from parent */
+}
+
+.scrollbox::before {
+  max-width: 2rem;
+  background: linear-gradient(to right, #fff, #fff 50%, rgba(255, 255, 255, 0));
+  border-top-right-radius: 0; /* Remove right side rounding */
+  border-bottom-right-radius: 0;
+}
+
+.scrollbox::after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 50%, #fff);
+  border-top-left-radius: 0; /* Remove left side rounding */
+  border-bottom-left-radius: 0;
+}
+
+/* Dark mode */
+:global(.dark) .scrollbox {
+  background-image:
+    radial-gradient(farthest-side at 0 50%, rgba(156, 163, 175, 0.4), rgba(156, 163, 175, 0)),
+    radial-gradient(farthest-side at 100% 50%, rgba(156, 163, 175, 0.4), rgba(156, 163, 175, 0));
+}
+
+:global(.dark) .scrollbox::before {
+  background: linear-gradient(to right, #000, #000 50%, rgba(0, 0, 0, 0));
+}
+
+:global(.dark) .scrollbox::after {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #000 50%, #000);
+}
